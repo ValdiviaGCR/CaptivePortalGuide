@@ -43,7 +43,7 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
 ### la solucion es borrar la configuracion de conexion ssh en el siguiente documento: C:\Users\<your user name>\.ssh , ahi dentro hay un archivo y si ya tienes una coneccion
 ### ssh con la ip 192.168.1.1 borra esa linea nada mas y listo.
 
-10. Al ejecutar la coneccion ssh del paso nueve le decimos que si ( 'y' ) y listo, estamos dentro de openwrt.
+10. Al ejecutar la coneccion ssh del paso nueve le decimos que si ( 'yes' ) y listo, estamos dentro de openwrt.
 11. Una vez dentro, cambiemos la contrasenia default de la raspberry con el siguiente comando: passwd, y luego creamos nuestra nueva contrasenia.
 12. luego nos vamos a la siguiente ruta: cd /etc/config
 13. Los documentos importantes de configuracion son los siguientes: 'firewall', 'wireless' y 'network' asi que hacemos un backup de los tres ejecutando los siguientes comandos(por si la cagamos en la configuracion siempre es buena idea hacer un bk de los documentos originales que empezaremos a modificar):
@@ -52,5 +52,61 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
     - cd wireless network.bk
 14. Ahora hay que cambiar la ip de la raspberry porque 192.168.1.1 es el mas comun en los router y pues eso lo hace mas facil de hackear al parecer, abrimos el archivo 'network' ejecutando:
     - vi network
-15.
+15. Vamos a modificar las lineas:
+    config interface 'lan'
+        option device 'br-lan'
+        option proto 'static'
+        option ipaddr '192.168.1.1'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+    por lo siguiente:
+    config interface 'lan'
+        option device 'br-lan'
+        option proto 'static'
+        option ipaddr '10.10.***.***'
+        option netmask '255.255.255.0'
+        option ip6assign '60'
+        option force_link '1'
+
+    NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquier numero, pero si es importante que inicie con 10.10... porque si no no te deja configurar cosas como smart tv porque dice que estas en una red publica, creo que los 198... los 10.10... son ip para redes privadas.
+
+17. Luego agregamos las siguientes lineas al final del archivo network:
+    config interface 'wwan'
+        option proto 'dhcp'
+        option peerdns '0'
+        option dns '1.1.1.1 8.8.8.8'
+
+    y listo!
+18. Ahora abrimos el archivo firewall con:  vi firewall
+19. Modificamos las siguientes lineas de la siguiente manera:
+   config zone
+        option name             wan
+        list   network          'wan'
+        list   network          'wan6'
+        option input            REJECT
+        option output           ACCEPT
+        option forward          REJECT
+        option masq             1
+        option mtu_fix          1
+
+    LAS MODIFICAMOS POR:
+    config zone
+        option name             wan
+        list   network          'wan'
+        list   network          'wan6'
+        option input            ACCEPT
+        option output           ACCEPT
+        option forward          REJECT
+        option masq             1
+        option mtu_fix          1
+    ESTO PARA QUE NO NOS BLOQUE LAS ENTRADAS DE RED, ES DECIR QUE NOS DEJE CONECTARNOS AL MODEM FUENTE.
+
+20. luego ejecutamos el comando ' reboot ' y esperamos un poco en lo que se reinicia la raspberry pi.
+21. Una vez reiniciada, para poder conectarnos de nuevo hay que ir a panel de control y lo que habiamos modificado de la ipv4, hay que ponerla como automatica otra vez, como estaba al inicio.
+22. ahora conectarnos de nuevo, haremos una coneccion ssh pero a la nueva ip que configuramos:
+   - ssh root@10.10.***.***
+22. Insertamos la contrasenia root que configuramos en unos pasos anteriores y listo, estamos de nuevo dentro en la raspberry pi.
+23.
+
+    
 
