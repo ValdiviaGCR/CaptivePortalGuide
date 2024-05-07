@@ -1,1 +1,3 @@
-# CaptivePortalGuide
+# CaptivePortalGuide: GUIA PARA ESPECIFICAMENTE HACERLO FUNCIONAR EN RASPBERRY PI 4B
+
+
