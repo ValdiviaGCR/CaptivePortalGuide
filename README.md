@@ -1,5 +1,6 @@
 # CaptivePortalGuide: GUIA PARA ESPECIFICAMENTE HACERLO FUNCIONAR EN RASPBERRY PI 4B
 
+<li><p>
 Basicamente segui los pasos del tutorial de youtube:
 https://www.youtube.com/watch?v=jlHWnKVpygw&t=597s
 En caso de que el tutorial ya no este en linea lo descargue y lo tengo en mi drive publico:
@@ -7,6 +8,7 @@ https://drive.google.com/drive/folders/1Pv3NOzGnVHLNCD1gwwUuR6ygyMyayGDn?usp=sha
 
 Ese tutorial lo segui porque inicialmente me interesaba un router VPN seguro pero me fue de mas ayuda entender lo que este vato
 estaba haciendo para entender bien como configurar openWRT.
+</p></li>
 
 ## Paso 1:
 Instale el software Raspberry Pi Imager de su sition oficial:
