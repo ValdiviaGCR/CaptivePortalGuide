@@ -85,7 +85,7 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
     y listo!
 19. Ahora abrimos el archivo firewall con:  vi firewall
 20. Modificamos las siguientes lineas de la siguiente manera:
-```python
+   ```python
    config zone
         option name             wan
         list   network          'wan'
@@ -95,9 +95,10 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option forward          REJECT
         option masq             1
         option mtu_fix          1
-   ```
+    ```
 
     LAS MODIFICAMOS POR:
+    ```python
     config zone
         option name             wan
         list   network          'wan'
@@ -107,6 +108,7 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option forward          REJECT
         option masq             1
         option mtu_fix          1
+   ```
     ESTO PARA QUE NO NOS BLOQUE LAS ENTRADAS DE RED, ES DECIR QUE NOS DEJE CONECTARNOS AL MODEM FUENTE.
 
 22. luego ejecutamos el comando ' reboot ' y esperamos un poco en lo que se reinicia la raspberry pi.
