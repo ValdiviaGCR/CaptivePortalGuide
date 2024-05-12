@@ -61,8 +61,8 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option netmask '255.255.255.0'
         option ip6assign '60'
     ```
-    por lo siguiente:
-    ```python
+-por lo siguiente:
+   ```python
     config interface 'lan'
         option device 'br-lan'
         option proto 'static'
@@ -70,9 +70,8 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option netmask '255.255.255.0'
         option ip6assign '60'
         option force_link '1'
-    ```
-
-    NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquier numero, pero si es importante que inicie con 10.10... porque si no no te deja configurar cosas como smart tv porque dice que estas en una red publica, creo que los 198... los 10.10... son ip para redes privadas.
+   ```
+NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquier numero, pero si es importante que inicie con 10.10... porque si no no te deja configurar cosas como smart tv porque dice que estas en una red publica, creo que los 198... los 10.10... son ip para redes privadas.
 
 17. Luego agregamos las siguientes lineas al final del archivo network:
     ```python
