@@ -53,16 +53,16 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
 14. Ahora hay que cambiar la ip de la raspberry porque 192.168.1.1 es el mas comun en los router y pues eso lo hace mas facil de hackear al parecer, abrimos el archivo 'network' ejecutando:
     - vi network
 15. Vamos a modificar las lineas:
-    ```python
+    ```bash
     config interface 'lan'
         option device 'br-lan'
         option proto 'static'
         option ipaddr '192.168.1.1'
         option netmask '255.255.255.0'
         option ip6assign '60'
-    
+    ```
     #por lo siguiente:
-
+```bash
     config interface 'lan'
         option device 'br-lan'
         option proto 'static'
