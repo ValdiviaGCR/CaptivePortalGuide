@@ -60,9 +60,9 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option ipaddr '192.168.1.1'
         option netmask '255.255.255.0'
         option ip6assign '60'
-    ```
--por lo siguiente:
-   ```python
+    
+    #por lo siguiente:
+
     config interface 'lan'
         option device 'br-lan'
         option proto 'static'
