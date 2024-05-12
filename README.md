@@ -75,14 +75,17 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
     NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquier numero, pero si es importante que inicie con 10.10... porque si no no te deja configurar cosas como smart tv porque dice que estas en una red publica, creo que los 198... los 10.10... son ip para redes privadas.
 
 17. Luego agregamos las siguientes lineas al final del archivo network:
+    ```python
     config interface 'wwan'
         option proto 'dhcp'
         option peerdns '0'
         option dns '1.1.1.1 8.8.8.8'
+    ```
 
     y listo!
-18. Ahora abrimos el archivo firewall con:  vi firewall
-19. Modificamos las siguientes lineas de la siguiente manera:
+19. Ahora abrimos el archivo firewall con:  vi firewall
+20. Modificamos las siguientes lineas de la siguiente manera:
+```python
    config zone
         option name             wan
         list   network          'wan'
@@ -92,6 +95,7 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option forward          REJECT
         option masq             1
         option mtu_fix          1
+   ```
 
     LAS MODIFICAMOS POR:
     config zone
@@ -105,9 +109,9 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
         option mtu_fix          1
     ESTO PARA QUE NO NOS BLOQUE LAS ENTRADAS DE RED, ES DECIR QUE NOS DEJE CONECTARNOS AL MODEM FUENTE.
 
-20. luego ejecutamos el comando ' reboot ' y esperamos un poco en lo que se reinicia la raspberry pi.
-21. Una vez reiniciada, para poder conectarnos de nuevo hay que ir a panel de control y lo que habiamos modificado de la ipv4, hay que ponerla como automatica otra vez, como estaba al inicio.
-22. ahora conectarnos de nuevo, haremos una coneccion ssh pero a la nueva ip que configuramos:
+22. luego ejecutamos el comando ' reboot ' y esperamos un poco en lo que se reinicia la raspberry pi.
+23. Una vez reiniciada, para poder conectarnos de nuevo hay que ir a panel de control y lo que habiamos modificado de la ipv4, hay que ponerla como automatica otra vez, como estaba al inicio.
+24. ahora conectarnos de nuevo, haremos una coneccion ssh pero a la nueva ip que configuramos:
    - ssh root@10.10.***.***
 22. Insertamos la contrasenia root que configuramos en unos pasos anteriores y listo, estamos de nuevo dentro en la raspberry pi.
 23.
