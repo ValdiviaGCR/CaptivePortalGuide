@@ -74,7 +74,7 @@ Una vez que este terminada la instalacion solo sacar la memoria SD y listo.
 NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquier numero, pero si es importante que inicie con 10.10... porque si no no te deja configurar cosas como smart tv porque dice que estas en una red publica, creo que los 198... los 10.10... son ip para redes privadas.
 
 17. Luego agregamos las siguientes lineas al final del archivo network:
-    ```python
+    ```bash
     config interface 'wwan'
         option proto 'dhcp'
         option peerdns '0'
@@ -84,7 +84,7 @@ NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquie
     y listo!
 19. Ahora abrimos el archivo firewall con:  vi firewall
 20. Modificamos las siguientes lineas de la siguiente manera:
-   ```python
+   ```bash
    config zone
         option name             wan
         list   network          'wan'
@@ -94,10 +94,10 @@ NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquie
         option forward          REJECT
         option masq             1
         option mtu_fix          1
-    ```
+   ```
 
-    LAS MODIFICAMOS POR:
-    ```python
+   LAS MODIFICAMOS POR:
+```bash
     config zone
         option name             wan
         list   network          'wan'
@@ -108,7 +108,7 @@ NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquie
         option masq             1
         option mtu_fix          1
    ```
-    ESTO PARA QUE NO NOS BLOQUE LAS ENTRADAS DE RED, ES DECIR QUE NOS DEJE CONECTARNOS AL MODEM FUENTE.
+   ESTO PARA QUE NO NOS BLOQUE LAS ENTRADAS DE RED, ES DECIR QUE NOS DEJE CONECTARNOS AL MODEM FUENTE.
 
 22. luego ejecutamos el comando ' reboot ' y esperamos un poco en lo que se reinicia la raspberry pi.
 23. Una vez reiniciada, para poder conectarnos de nuevo hay que ir a panel de control y lo que habiamos modificado de la ipv4, hay que ponerla como automatica otra vez, como estaba al inicio.
