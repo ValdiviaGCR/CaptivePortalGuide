@@ -175,4 +175,12 @@ opkg update
 ```bash
  opkg list | grep Realtek
 ```
-39. 
+39. Y con este comando instalariamos todos los paquetes que salgan filtrados con la palabra Realtek(por flojera de no investigar cual especificamente sirve):
+```bash
+opkg list | grep Realtek | awk '{print $1}' | xargs opkg install
+```
+y tambien intenta con 
+```bash
+opkg list | grep RealTek | awk '{print $1}' | xargs opkg install
+```
+40. 
