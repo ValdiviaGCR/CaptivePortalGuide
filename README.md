@@ -145,7 +145,7 @@ wifi
 ```
 29.  Hasta este punto si se hizo todo bien ya debe aparecer una red sin contrasenia ni nada llamada 'OpenWrt', basicamente habilitamos la red rad0, pero esa la vamos a usar para conectarse a la fuente de internet wifi,  la antena externa que compramos es
     la que haremos que emita nuestro portal cautivo. Ahora vamos a conectarnos a la fuente wifi y para esto lo mas facil es irse a la interface grafica, estando conectados a la red que emite la raspberry por wifi o por ethernet, metemos en el explorador la ip que le configuramos a la raspberry, en este caso 10.10.***.***, nos aparecera una ventana para logg in, metemos solo la contrasena que le configuramos a la raspberry pi y listo:
-![Descripción de la imagen](CaptivePortalGuide/img/1.png)
+![Descripción de la imagen](./img/1.png)
 
     
 
