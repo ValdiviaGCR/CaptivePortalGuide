@@ -159,3 +159,7 @@ wifi
         ![5](./img/8.png)
         ![6](./img/9.png)
 
+32. Si seguimos bien los pasos anteriores ya configuramos el cliente, BASICAMENTE ESTOS PASOS QUE HICIMOS CON LA INTERFACE GRAFICA SON LOS PASOS QUE TENEMOS QUE HACER PARA CADA VEZ QUE QUERAMOS CONECTAR EL ROUTER A UNA NUEVA RED, ES DECIR TENEMOS QUE CONECTAR AL NUEVO CLIENTE, BUSCAMOS LA RED, ACTIVAMOS LA CHECK BOX PARA QUE REEMPLACE LA CONFIGURACION DEL CLIENTE ANTERIOR Y PONEMOS LA CONTRASENA Y FINALMENTE GUARDAMOS Y LISTO. Incluso podemos hacer una prueba de conexion por ejemplo ejecutando el comando 'ping google.com'         ![6](./img/10.png)
+33. Los siguientes pasos ahora es configurar la re trasnmision de la red por la antena que compramos, yo ya probe con dos diferentes antenas que compre por amazon pero antes de comprar una antena hay que buscar en internet por antenas wifi compatibles con raspberry pi, si no habra problemas de drivers y no va a jalar, eso ya investiguen cual antena venden en mexico y es compatible, normalmente las baratas chinas jalan bien jaja, probe con tp-link y no jalo.
+34. 
+
