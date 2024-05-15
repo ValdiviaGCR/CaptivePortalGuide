@@ -145,7 +145,17 @@ wifi
 ```
 29.  Hasta este punto si se hizo todo bien ya debe aparecer una red sin contrasenia ni nada llamada 'OpenWrt', basicamente habilitamos la red rad0, pero esa la vamos a usar para conectarse a la fuente de internet wifi,  la antena externa que compramos es
     la que haremos que emita nuestro portal cautivo. Ahora vamos a conectarnos a la fuente wifi y para esto lo mas facil es irse a la interface grafica, estando conectados a la red que emite la raspberry por wifi o por ethernet, metemos en el explorador la ip que le configuramos a la raspberry, en este caso 10.10.***.***, nos aparecera una ventana para logg in, metemos solo la contrasena que le configuramos a la raspberry pi y listo:
-![Descripción de la imagen](./img/1.png)
+![Inicio de sesion](./img/1.png)
+30. Despues de esos pasos ya estamos dentro del menu, es un menu como el de cualquier modem, y nos vamos a la siguiente ruta en los menus: Network/Wireless/
+    ![Configuracion de Wireless](./img/2.png)
+    en la ruta veremos lo siguiente, y damos clic en 'scan' para conectar 'rad0'
+    ![Scanear las redes disponibles](./img/3.png)
 
-    
+31. Seguimos los siguientes pasos para configurar la red 'client', no creo que sea necesario detallar mas en cada paso:
+        ![1](./img/4.png)
+        ![2](./img/5.png)
+        ![3](./img/6.png)
+        ![4](./img/7.png)
+        ![5](./img/8.png)
+        ![6](./img/9.png)
 
