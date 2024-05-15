@@ -117,8 +117,33 @@ NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquie
 25. Insertamos la contrasenia root que configuramos en unos pasos anteriores y listo, estamos de nuevo dentro en la raspberry pi.
 26. Una vez que estemos loggeados de nuevo, nos vamos a modificar el archivo:
 ```bash
-vi etc/config/wireless
+vi /etc/config/wireless
 ```
-27. 
+27. Modificamos el contenido de ese archivo para que quede de la siguiente manera:
+```bash
+config wifi-device 'radio0'
+        option type 'mac80211'
+        option path 'platform/soc/fe300000.mmcnr/mmc_host/mmc1/mmc1:0001/mmc1:0001:1'
+        option channel '7'
+        option band '11g'
+        option htmode 'HT20'
+        option disabled '0'
+        option short_gi_40 '0'
+
+config wifi-iface 'default_radio0'
+        option device 'radio0'
+        option network 'lan'
+        option mode 'ap'
+        option ssid 'OpenWrt'
+        option encryption 'none'
+```
+Guardamos el archivo ( con los comandos ESC seguido de :wq y ENTER)
+28. Ahora una vez actualizado el archivo ejecutamos desde la linea de comandos los siguientes comandos para actualizar la configuracion wireless:
+```bash
+uci commit wireless
+wifi
+```
+29.  Hasta este punto si se hizo todo bien ya debe aparecer una red sin contrasenia ni nada llamada 'OpenWrt', basicamente habilitamos la red rad0, pero esa la vamos a usar para conectarse a la fuente de internet wifi,  la antena externa que compramos es
+    la que haremos que emita nuestro portal cautivo. Ahora vamos a conectarnos a la fuente wifi y para esto lo mas facil es irse a la interface grafica, estando conectados a la red que emite la raspberry por wifi o por ethernet, metemos en el explorador la ip que le configuramos a la raspberry, en este caso 10.10.***.***, nos aparecera u
     
 
