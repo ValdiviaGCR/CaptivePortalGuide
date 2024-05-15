@@ -171,4 +171,8 @@ opkg update
     ```
 36. Ahora si podemos conectar la antena usb pero antes ejecuta el siguiente comando para ver la lista de los dispositivos que tienes conectados via usb, y para ver cual aparece nuevo una vez conectada la antena, eso te dara una idea de que driver necesitas en caso de que no te hayan funcionado los drivers en el paso anterior. El comando es 'lsusb'. Por ejemplo en mi caso ese comando anterior no me funciono, pero yo se que el driver que necesito es un realtek por lo siguiente:
     ![6](./img/realtek.png)
-38. P
+38. Para comenzar a buscar entre los drivers ejecutamos el comando
+```bash
+ opkg list | grep Realtek
+```
+39. 
