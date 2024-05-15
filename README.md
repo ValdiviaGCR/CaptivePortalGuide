@@ -161,5 +161,14 @@ wifi
 
 32. Si seguimos bien los pasos anteriores ya configuramos el cliente, BASICAMENTE ESTOS PASOS QUE HICIMOS CON LA INTERFACE GRAFICA SON LOS PASOS QUE TENEMOS QUE HACER PARA CADA VEZ QUE QUERAMOS CONECTAR EL ROUTER A UNA NUEVA RED, ES DECIR TENEMOS QUE CONECTAR AL NUEVO CLIENTE, BUSCAMOS LA RED, ACTIVAMOS LA CHECK BOX PARA QUE REEMPLACE LA CONFIGURACION DEL CLIENTE ANTERIOR Y PONEMOS LA CONTRASENA Y FINALMENTE GUARDAMOS Y LISTO. Incluso podemos hacer una prueba de conexion por ejemplo ejecutando el comando 'ping google.com'         ![6](./img/10.png)
 33. Los siguientes pasos ahora es configurar la re trasnmision de la red por la antena que compramos, yo ya probe con dos diferentes antenas que compre por amazon pero antes de comprar una antena hay que buscar en internet por antenas wifi compatibles con raspberry pi, si no habra problemas de drivers y no va a jalar, eso ya investiguen cual antena venden en mexico y es compatible, normalmente las baratas chinas jalan bien jaja, probe con tp-link y no jalo.
-34. 
-
+34. Antes de conectar la antena hay que actualizar los paquetes de la raspberry pi, ejecutando el siguiente comando(si no descarga los paquetes actualizados reinicia el raspberry con 'reboot' y despues lo vuelves a intentar):
+```bash
+opkg update
+```
+35. Y ahora instalamos los drivers de antenas wifi comunes:
+    ```bash
+    opkg install kmod-rt2800-lib kmod-rt2800-usb kmod-rt2x00-lib kmod-rt2x00-usb kmod-usb-core kmod-usb-uhci kmod-usb-ohci kmod-usb2 usbutils openvpn-openssl luci-app-openvpn nano
+    ```
+36. Ahora si podemos conectar la antena usb pero antes ejecuta el siguiente comando para ver la lista de los dispositivos que tienes conectados via usb, y para ver cual aparece nuevo una vez conectada la antena, eso te dara una idea de que driver necesitas en caso de que no te hayan funcionado los drivers en el paso anterior. El comando es 'lsusb'. Por ejemplo en mi caso ese comando anterior no me funciono, pero yo se que el driver que necesito es un realtek por lo siguiente:
+    ![6](./img/realtek.png)
+38. P
