@@ -114,10 +114,11 @@ NOTA: en la opcion: option ipaddr '10.10.***.***' sustituye los *** por cualquie
 23. Una vez reiniciada, para poder conectarnos de nuevo hay que ir a panel de control y lo que habiamos modificado de la ipv4, hay que ponerla como automatica otra vez, como estaba al inicio.
 24. ahora conectarnos de nuevo, haremos una coneccion ssh pero a la nueva ip que configuramos:
    - ssh root@10.10.***.***
-22. Insertamos la contrasenia root que configuramos en unos pasos anteriores y listo, estamos de nuevo dentro en la raspberry pi.
-23. Una vez que estemos loggeados de nuevo, nos vamos a modificar el archivo:
-'''bash
+25. Insertamos la contrasenia root que configuramos en unos pasos anteriores y listo, estamos de nuevo dentro en la raspberry pi.
+26. Una vez que estemos loggeados de nuevo, nos vamos a modificar el archivo:
+```bash
 vi etc/config/wireless
-'''
+```
+27. 
     
 
