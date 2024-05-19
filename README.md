@@ -206,8 +206,6 @@ nuevamente aplique los cambios con los comandos 'uci commit wireless' seguido de
  ![6](./img/17.png)
 etonces estaba viendo esa red sin contrasenia ya en mi telefono
  ![6](./img/18.jpeg)
-por cierto esta es la nueva antena que use jaja
-![6](./img/19.jpeg)
 y una vez que modifique el nombre de la wifi y aplique los cambios la red ya se veia asi:
 ![6](./img/20.jpeg)
 Entonces hasta este punto ya tenemos un router que se puede conectar a cualquier red wifi para repetir la senial en una nueva red publica sin contrasenia, lo que sigue a partir de aqui es crear el portal cautivo, para eso vamos a usar NododgSplash, pero creo que hay otras opciones, esta es la que ya me funciono, por eso voy a explicar esta opcion.
