@@ -183,4 +183,5 @@ y tambien intenta con
 ```bash
 opkg list | grep RealTek | awk '{print $1}' | xargs opkg install
 ```
-40. 
+40. En este punto no me habia funcionado con la antena que habia comprado:
+    ![6](./img/11.jpeg)
