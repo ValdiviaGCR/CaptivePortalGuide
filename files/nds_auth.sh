@@ -3,8 +3,6 @@
 METHOD="$1"
 MAC="$2"
 
-
-
 case "$METHOD" in
   auth_client)
     USERNAME="$3"
@@ -19,7 +17,8 @@ case "$METHOD" in
       exit 1
     fi
     ;;
-  client_auth|client_deauth|idle_deauth|timeout_deauth|ndsctl_auth|ndsctl_deauth|shutdown_deau    INGOING_BYTES="$3"
+  client_auth|client_deauth|idle_deauth|timeout_deauth|ndsctl_auth|ndsctl_deauth|shutdown_deauth)
+    INGOING_BYTES="$3"
     OUTGOING_BYTES="$4"
     SESSION_START="$5"
     SESSION_END="$6"
