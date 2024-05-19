@@ -262,6 +262,7 @@ chmod +x /etc/nds_auth.sh
 /etc/init.d/nodogsplash restart
 ```
 5. si algo no funciona reinicia la raspberry con 'reboot' pero ya me funciono todo hasta este punto. FELICIDADES YA TIENES UN PORTAL CAUTIVO QUE GUARDA LA INFORMACION DE LOS USUARIOS QUE LO USAN EN EL ARCHIVO 'vi /etc/form_output.txt', bueno no es verdad jajaj aqui es donde voy, no esta guardando las variables correctas, pero si esta guardando informacion, seguire averiguando y las versiones actualizadas de los archivos 'nds_auth.sh' y 'splash.html' las guardare en la carpeta './files/updated_files/'.
+   ![6](./img/22.png)
 
 #ACTUALIZACION DEL PORTAL CAUTIVO PARA GUARDAR LOS DATOS:
 
