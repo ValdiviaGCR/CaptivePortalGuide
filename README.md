@@ -231,7 +231,38 @@ opkg files nodogsplash
 https://nodogsplash.readthedocs.io/en/v5.0.0/binauth.html y ademas leer los archivos que se intalaron en la raspberry, pero bueno a continuacion nada mas explico como realizar los pasos para pedir autenticacion y para guardar la informacion de la persona que se esta autenticando.
 
 ## Para la autenticacion:
-1. 
+1. Primero creamos el archivo nds_auth.sh en la raspberry, dentro de la carpeta /etc/, 'vi /etc/nds_auth.sh' y copiamos lo que viene en el archivo dentro de este repositorio y obviamente despues guardamos el archivo:
+   [Accede a archivo de autenticacion](./files/nds_auth.sh)
+   Este archivo asi como esta, solamente dejara al usuario tener internet por una hora, podemos modificar el '3600' por otra cantidad para dejarlos mas tiempo, pero una hora estaria bien para estarles pidiendo informacion seguido, o eso creo.
+3. Pero tenemos que hacer el ese archivo de texto sea un archivo ejecutable de bash, si no se queda como puro texto, entonces despues de guardar el archivo y salirnos del archivo ejecutamos el comando:
+```bash
+chmod +x /etc/nds_auth.sh
+```
+3. Despues tenemos que editar el archivo splash.htlm que basicamente es la pagina del portal cautivo, el front end, la ruta para editarlo es: 'vi /etc/nodogsplash/htdocs/splash.html' y pues reemplazamos el contenido que tiene con lo que esta dentro del archivo de este repositorio: [Accede a archivo html](./files/splash.html), guradamos y listo. En este paso me salio un error, creo que en vez de reemplazar todo el splash.html por mi archivo que puse aqui en el repo, solo reemplaza la parte de la authenticacion por lo siguiente:
+```html
+<form method='GET' action='$authaction'>
+<input type='hidden' name='tok' value='$tok'>
+<input type='hidden' name='redir' value='$redir'>
+<input type='hidden' name='username' value='Bill'>
+<input type='hidden' name='password' value='tms'>
+<label for="name">Nombre:</label><br>
+<input type="text" id="name" name="name"><br>
+<label for="age">Edad:</label><br>
+<input type="text" id="age" name="age"><br>
+<label for="email">Correo:</label><br>
+<input type="email" id="email" name="email"><br>
+<label for="whatsapp">WhatsApp:</label><br>
+<input type="text" id="whatsapp" name="whatsapp"><br>
+<input type="submit" value="Conectar Wifi Gratis">
+</form>
+```
+  
+4. Como casi ultimo paso, nos vamos a editar el archivo de configuracion de nodogsplash 'vi /etc/config/nodogsplash' dentro de este archivo vamos a ver una seccion que habla sobre la bin auth, y hay por ahi una linea que dice '#option binauth '/bin/myauth.sh'', esta linea le borramos el # y la reemplazamos por 'option binauth '/etc/nds_auth.sh'', guardamos cerramos el archivo y por ultimo aplicamos todos los cambios que le hicimos al nodogsplash con el siguiente comando:
+```bash
+/etc/init.d/nodogsplash restart
+```
+5. si algo no funciona reinicia la raspberry con 'reboot' pero ya me funciono todo hasta este punto. FELICIDADES YA TIENES UN PORTAL CAUTIVO QUE GUARDA LA INFORMACION DE LOS USUARIOS QUE LO USAN EN EL ARCHIVO 'vi /etc/form_output.txt', bueno no es verdad jajaj aqui es donde voy, no esta guardando las variables correctas, pero si esta guardando informacion, seguire averiguando y las versiones actualizadas de los archivos 'nds_auth.sh' y 'splash.html' las guardare en la carpeta './files/updated_files/'.
 
-    
+#ACTUALIZACION DEL PORTAL CAUTIVO PARA GUARDAR LOS DATOS:
+
     
