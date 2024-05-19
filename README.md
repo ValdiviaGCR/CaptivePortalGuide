@@ -192,5 +192,29 @@ opkg list | grep RealTek | awk '{print $1}' | xargs opkg install
     pense que no estaba funcionando pero es que se me habia olvidado que en estos pasos no era igual a lo que dice en el tutorial del video de youtube, entonces compre una antena nueva:
     ![6](./img/19.jpeg)
     y los pasos que segui fueron los siguientes...
-43. 
+43. Una vez que conecte la nueva antena en el mismo puerto usb que habia conectado la otra, volvi a intentar instalar todos los draves, lei en esa antena que el chipset es el rt5370 entonces busque todos los drivers en opkg que fueran para esa antena 'Bus 001 Device 003: ID 148f:5370 Ralink 802.11 n WLAN' y los instale, despues reinicie el rapsberry con 'reboot' y me fui al archivo 'vi /etc/config/wireless' dentro me di cuenta que ya tenia en el archivo registrada una 'radio1' recordamos que la 'radio0' era la wifi interna, entonces al parecer ya me habian funcionado los driver que instale y la neuva ante, basicamente esta parte es la que veo mas complicada, estar buscando la antena que si sirve y que sea barata, una vez que encontremos una pues anotar bien el nombre para usar esa y no estarle cambiando. Entonces los pasos que hice son los siguientes:
+    me fui al archivo wireless con  'vi /etc/config/wireless' y ahi vi que ya estaba la red 'radio1'
+ ![6](./img/11.png)
+modifique la opcion de disable de '1' a '0' para activar esa red y obviamente guarde los cambios en el archivo.
+ ![6](./img/12.png)
+ejecute los comandos 'uci commit wireless' seguido de el comando 'wifi' para aplicar los cambios
+ ![6](./img/14.png)
+y luego cambie el nombre de la red que estaba por default de 'OpenWrt' por 'Wifi_GRATIS', obviamente pueden usar el que ustedes quieran, no le configure ninguna contrasenia pero en el tutorial de youtube explica como ponerle contrasena a la red, mas delante pondremos el portal cautivo para pedir los datos antes de dejar al usuario conectarse.
+ ![6](./img/15.png)
+ ![6](./img/16.png)
+nuevamente aplique los cambios con los comandos 'uci commit wireless' seguido de el comando 'wifi'
+ ![6](./img/17.png)
+etonces estaba viendo esa red sin contrasenia ya en mi telefono
+ ![6](./img/18.jpeg)
+por cierto esta es la nueva antena que use jaja
+![6](./img/19.jpeg)
+y una vez que modifique el nombre de la wifi y aplique los cambios la red ya se veia asi:
+![6](./img/20.jpeg)
+Entonces hasta este punto ya tenemos un router que se puede conectar a cualquier red wifi para repetir la senial en una nueva red publica sin contrasenia, lo que sigue a partir de aqui es crear el portal cautivo, para eso vamos a usar NododgSplash, pero creo que hay otras opciones, esta es la que ya me funciono, por eso voy a explicar esta opcion.
+
+
+# PORTAL CAUTIVO CON NODOGSPLASH
+
+
+    
     
