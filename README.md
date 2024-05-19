@@ -213,6 +213,25 @@ Entonces hasta este punto ya tenemos un router que se puede conectar a cualquier
 
 # PORTAL CAUTIVO CON NODOGSPLASH
 
+## Para lo del portal cautivo como que recordaba que yo habia visto un totorial de youtube, pero creo que no, o no lo encuentro, pero buscando en mi historial de ChatGPT, creo que le pregunte al chat como hacer eso, es algo sencillo la verdad, los pasos a continuacion:
+1. Primero ejecutamos los siguientes comandos para descargar e instalar nodog splash dentro de nuestro router que ya creamos, entonces pues obiamente entramos al router con ssh, e iniciamos sesion, desde ahi ejecutamos:
+   ```bash
+   opkg update
+   opkg install nodogsplash
+   reboot
+   ```
+2. Una vez instalado pues nos quedaremos sin internet porque se activa automaticamente el portal cautivo, entonces pues abrimos la red o escribirmos la ip de nuestra raspberry en el explorador para que nos abra la ventana de autenticacion y podamos autenticarnos y tener internet de nuevo:
+![6](./img/21.png)
+3. El siguiente comando me fue muy util porque con ese comando pude hacer que me desplegara todos los archivos que se instalaron cuando instale el paquete de nodogsplash y asi poder leerlos detalladamente y saber cual debo modificar:
+```bash
+opkg files nodogsplash
+```
+4. Lo importante para configurar el frontend del sitio web esta en la ruta '/etc/nodogsplash/htdocs' recomiendo crear un backup de los archivos de ahi adentro porque vamos a estar modificando cosas y luego la cagamos y pues valio chet.
+5. Lo que me sirvio mas para esta parte de nodogsplash mas que ver videos de youtube fue leer el repo de la fuente:
+https://nodogsplash.readthedocs.io/en/v5.0.0/binauth.html y ademas leer los archivos que se intalaron en la raspberry, pero bueno a continuacion nada mas explico como realizar los pasos para pedir autenticacion y para guardar la informacion de la persona que se esta autenticando.
+
+## Para la autenticacion:
+1. 
 
     
     
