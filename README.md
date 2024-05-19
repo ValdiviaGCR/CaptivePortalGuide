@@ -183,5 +183,14 @@ y tambien intenta con
 ```bash
 opkg list | grep RealTek | awk '{print $1}' | xargs opkg install
 ```
-40. En este punto no me habia funcionado con la antena que habia comprado:
+40. En este punto no me habia funcionado con la antena que habia comprado, siempre las conecto en el mismo lugar para asegurarme que no haya problemas con el nombre del puerto etc:
     ![6](./img/11.jpeg)
+    ![6](./img/12.jpeg)
+42. La antena que estaba usando es una que encontre en amazon:
+    ![6](./img/18.png)
+    pero no me funciono(o eso es lo que creo, la devolvi y no segui intentando y fui por una diferente, en los comentarios todos decian que si funcionaba con raspberry pi) lo que pasa es que yo estaba ejecutando el comando 'ifconfig' y esperaba ver la red generada por esa antena y como no me aparecia
+    pense que no estaba funcionando pero es que se me habia olvidado que en estos pasos no era igual a lo que dice en el tutorial del video de youtube, entonces compre una antena nueva:
+    ![6](./img/19.jpeg)
+    y los pasos que segui fueron los siguientes...
+43. 
+    
