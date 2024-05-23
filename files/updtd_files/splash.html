@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al WifiGRATUITO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al WifiGRATUITO</h1>
+        
+	<form method='GET' action='$authaction'>
+    <input type='hidden' name='tok' value='$tok'>
+    <input type='hidden' name='redir' value='$redir'>
+    <label for="name">Nombre:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="whatsapp">WhatsApp:</label><br>
+    <input type="tel" id="password" name="password" required pattern="[0-9]{10}" title="Por favor, ingresa un numero de telefono valido de 10 digitos"><br>
+    <input type="submit" value="Conectar Wifi Gratis">
+</form>
+
+        <div class="disclaimer">
+            <p>
+                Al conectarse a esta red, acepta los términos y condiciones del servicio de WifiGRATUITO. Esta red es de uso público y se proporciona para su comodidad y conveniencia. Tenga en cuenta que el acceso a Internet está sujeto a supervisión y registro para garantizar la seguridad y el cumplimiento de las políticas de uso aceptable.
+            </p>
+            <p>
+                Los datos personales que proporcione, incluidos su nombre, edad, correo electrónico y número de WhatsApp, se utilizarán con fines de autenticación y pueden ser utilizados para enviarle información promocional y publicitaria. Nos comprometemos a proteger su privacidad y a utilizar sus datos de manera responsable conforme a nuestra política de privacidad.
+            </p>
+            <p>
+                Al utilizar este servicio, usted acepta que no llevará a cabo actividades ilegales o inapropiadas en la red. El acceso a ciertos sitios web y servicios puede estar restringido para cumplir con las leyes y regulaciones aplicables.
+            </p>
+            <p>
+                Este servicio se ofrece sin garantías y no nos hacemos responsables por cualquier interrupción, pérdida de datos o cualquier otro daño que pueda ocurrir como resultado del uso de esta red. Nos reservamos el derecho de limitar o suspender el acceso a la red en cualquier momento y por cualquier motivo.
+            </p>
+            <p>
+                Si tiene alguna pregunta o necesita asistencia, no dude en ponerse en contacto con nuestro equipo de soporte.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
